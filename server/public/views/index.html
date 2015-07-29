@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>MEAN Stack</title>
+        <script src="/vendors/angular/angular.min.js" type="text/javascript"></script>
+        <script src="/assets/scripts/app.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div>
+            <h1>MEAN Stack App</h1>
+        </div>
+        <div ng-controller="IndexController">
+            <p ng-show="cat.name">Your new cat's name is: {{cat.name}}</p>
+            <p ng-hide="cat.name">Enter your cat's name!</p>
+            <form novalidate>
+                Name: <input type="text" ng-model="cat.name"/><br/>
+                <input type="submit" ng-click="add(cat)" value="Save"/>
+            </form>
+            <h4>Cats</h4>
+            <ul>
+                <li ng-repeat="cat in cats">{{cat.name}}</li>
+            </ul>
+        </div>
+    </body>
+</html>
